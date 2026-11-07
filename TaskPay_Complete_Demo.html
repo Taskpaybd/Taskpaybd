@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaskPay — Demo Website</title>
+<style>
+:root{--bg:#f4f7fb;--ink:#17233b;--muted:#66748b;--brand:#176b55;--brand2:#20a477;--card:#fff;--line:#e5ebf2;--gold:#ffbd4a}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(120deg,#104b43,#168565);color:white;padding:18px 16px 24px}
+.top{max-width:1050px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.logo{font-weight:900;font-size:23px;letter-spacing:.2px}.logo span{color:#b9ffda}
+nav{display:flex;gap:7px;flex-wrap:wrap}
+button,.btn{border:0;border-radius:12px;padding:10px 13px;font-weight:700;cursor:pointer;font-size:14px}
+nav button{background:#ffffff20;color:#fff}
+nav button.active,nav button:hover{background:white;color:#145a49}
+main{max-width:1050px;margin:22px auto;padding:0 14px 40px}
+.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:18px;align-items:center;background:linear-gradient(135deg,#e3fff1,#f9fffc);border:1px solid #c9efdc;border-radius:22px;padding:25px}
+h1{font-size:clamp(27px,5vw,43px);line-height:1.15;margin:0 0 12px}.hero p{color:#4c675e;line-height:1.7;margin:0 0 18px}
+.btn-primary{background:var(--brand);color:white}.btn-light{background:#e9f5ef;color:var(--brand)}.btn-danger{background:#fff0ef;color:#b53b35}
+.hero-art{background:#d0f4df;border-radius:20px;min-height:165px;display:grid;place-items:center;font-size:76px}
+.section-title{margin:26px 0 13px;font-size:21px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:17px;box-shadow:0 5px 18px #193b5510}
+.card h3{margin:7px 0;font-size:17px}.card p{color:var(--muted);font-size:14px;line-height:1.55;margin:5px 0 12px}
+.emoji{font-size:27px}.pill{display:inline-block;border-radius:30px;background:#eaf7f0;color:#176b55;padding:5px 9px;font-size:12px;font-weight:800}
+.notice{margin-top:17px;padding:14px 16px;border-radius:14px;background:#fff8e8;border:1px solid #f5e2b5;color:#75551c;font-size:13px;line-height:1.6}
+.page{display:none}.page.active{display:block}
+.panel{max-width:600px;margin:10px auto;background:white;border:1px solid var(--line);border-radius:20px;padding:22px}
+input,select,textarea{width:100%;padding:12px;border:1px solid #dce4ed;border-radius:11px;margin:6px 0 13px;font:inherit;background:#fff}
+label{font-weight:700;font-size:13px}form button{width:100%}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:15px 0}
+.stat strong{display:block;font-size:23px;color:var(--brand)}.stat small{color:var(--muted)}
+.task-row{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px solid var(--line);padding:13px 0}
+.task-row:first-of-type{border-top:0}
+footer{text-align:center;color:#718096;font-size:12px;padding:20px}
+@media(max-width:700px){.hero{grid-template-columns:1fr}.hero-art{min-height:110px}.grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}}
+@media(max-width:430px){.grid{grid-template-columns:1fr}.panel{padding:17px}nav button{padding:8px 10px}}
+</style>
+</head>
+<body>
+<header><div class="top">
+<div class="logo">Task<span>Pay</span> ✦</div>
+<nav>
+<button class="active" data-page="home">হোম</button>
+<button data-page="login">লগইন</button>
+<button data-page="register">রেজিস্ট্রেশন</button>
+<button data-page="dashboard">ড্যাশবোর্ড</button>
+<button data-page="admin">অ্যাডমিন</button>
+</nav></div></header>
+<main>
+<section id="home" class="page active">
+<div class="hero"><div><span class="pill">সহজ • পরিষ্কার • নিরাপদ</span><h1>ছোট কাজ, শেখার নতুন সুযোগ</h1><p>TaskPay একটি নমুনা টাস্ক প্ল্যাটফর্মের ডেমো। এখানে টাস্কের নমুনা, ইউজার ড্যাশবোর্ড এবং অ্যাডমিন প্যানেল দেখে নিতে পারবে।</p><button class="btn btn-primary" onclick="showPage('register')">শুরু করো</button> <button class="btn btn-light" onclick="showPage('dashboard')">ড্যাশবোর্ড দেখো</button></div><div class="hero-art">💼✨</div></div>
+<h2 class="section-title">কাজের ক্যাটাগরি</h2>
+<div class="grid">
+<div class="card"><div class="emoji">📝</div><h3>সার্ভে</h3><p>ছোট প্রশ্নের উত্তর দেওয়ার নমুনা কাজ।</p><span class="pill">সহজ কাজ</span></div>
+<div class="card"><div class="emoji">📱</div><h3>অ্যাপ পরীক্ষা</h3><p>অ্যাপের ব্যবহারযোগ্যতা সম্পর্কে মতামত।</p><span class="pill">ডেমো টাস্ক</span></div>
+<div class="card"><div class="emoji">🔎</div><h3>ডেটা যাচাই</h3><p>তথ্য মিলিয়ে দেখার নমুনা কাজ।</p><span class="pill">ডেমো টাস্ক</span></div>
+</div>
+<div class="notice"><b>নিরাপত্তা:</b> এটি শুধু ফ্রন্ট-এন্ড ডেমো। কোনো আসল টাকা লেনদেন হয় না। কখনো bKash/Nagad/Rocket PIN, OTP বা পাসওয়ার্ড কারও সঙ্গে শেয়ার করবে না।</div>
+</section>
+
+<section id="login" class="page"><div class="panel"><h2>স্বাগতম 👋</h2><p style="color:var(--muted)">ডেমো লগইন ফর্ম — আসল অ্যাকাউন্ট নয়।</p><form onsubmit="demoSubmit(event,'লগইন')"><label>ইমেইল বা ইউজারনেম</label><input required placeholder="তোমার ইমেইল"><label>পাসওয়ার্ড</label><input type="password" required placeholder="পাসওয়ার্ড"><button class="btn btn-primary">ডেমো লগইন</button></form><p style="font-size:13px">নতুন এখানে? <a href="#" onclick="showPage('register')">রেজিস্ট্রেশন করো</a></p></div></section>
+
+<section id="register" class="page"><div class="panel"><h2>নতুন অ্যাকাউন্ট তৈরি</h2><p style="color:var(--muted)">এটি শুধু নমুনা ফর্ম; তথ্য কোথাও পাঠানো বা সংরক্ষণ করা হয় না।</p><form onsubmit="demoSubmit(event,'রেজিস্ট্রেশন')"><label>তোমার নাম</label><input required placeholder="পুরো নাম"><label>ইমেইল</label><input type="email" required placeholder="name@example.com"><label>পাসওয়ার্ড</label><input type="password" required minlength="6" placeholder="কমপক্ষে ৬ অক্ষর"><button class="btn btn-primary">ডেমো অ্যাকাউন্ট তৈরি</button></form></div></section>
+
+<section id="dashboard" class="page"><h2>ইউজার ড্যাশবোর্ড</h2><p style="color:var(--muted)">স্বাগতম, Demo User! নিচের সব তথ্য নমুনা।</p>
+<div class="stats"><div class="card stat"><small>নমুনা ব্যালেন্স</small><strong>৳ ২৫০</strong></div><div class="card stat"><small>সম্পন্ন টাস্ক</small><strong>১২</strong></div><div class="card stat"><small>পর্যালোচনায়</small><strong>২</strong></div></div>
+<div class="card"><h3>উপলব্ধ টাস্ক</h3>
+<div class="task-row"><div><b>ছোট সার্ভে পূরণ</b><p>সময়: ৫ মিনিট • নমুনা পুরস্কার ৳২০</p></div><button class="btn btn-light" onclick="demoAlert()">দেখো</button></div>
+<div class="task-row"><div><b>অ্যাপের অভিজ্ঞতা জানাও</b><p>সময়: ৮ মিনিট • নমুনা পুরস্কার ৳৩০</p></div><button class="btn btn-light" onclick="demoAlert()">দেখো</button></div>
+<div class="task-row"><div><b>তথ্য যাচাই</b><p>সময়: ৩ মিনিট • নমুনা পুরস্কার ৳১০</p></div><button class="btn btn-light" onclick="demoAlert()">দেখো</button></div></div>
+<div class="notice">ব্যালেন্স ও পুরস্কারগুলো কেবল ডিজাইনের নমুনা; এগুলো আসল টাকা নয় এবং উত্তোলন করা যাবে না।</div></section>
+
+<section id="admin" class="page"><h2>অ্যাডমিন প্যানেল</h2><p style="color:var(--muted)">শুধু UI প্রিভিউ — এখানে প্রকৃত অ্যাডমিন নিরাপত্তা বা সার্ভার নেই।</p>
+<div class="grid"><div class="card stat"><small>মোট ইউজার</small><strong>১২৮</strong></div><div class="card stat"><small>সক্রিয় টাস্ক</small><strong>৮</strong></div><div class="card stat"><small>জমা পড়েছে</small><strong>২৪</strong></div></div>
+<div class="panel" style="max-width:none;margin-top:15px"><h3>নতুন নমুনা টাস্ক যোগ করো</h3><form onsubmit="addTask(event)"><label>টাস্কের নাম</label><input id="taskName" required placeholder="যেমন: ছোট সার্ভে"><label>বর্ণনা</label><textarea id="taskDesc" rows="3" placeholder="কাজের বিবরণ"></textarea><label>নমুনা পুরস্কার (৳)</label><input id="taskReward" type="number" min="0" value="২০"><button class="btn btn-primary">ডেমো টাস্ক যোগ</button></form><div id="addedTasks"></div></div>
+<div class="notice">আসল ওয়েবসাইট চালু করার আগে নিরাপদ সার্ভার, অ্যাডমিন লগইন, ডেটাবেস, গোপনীয়তা নীতি এবং বৈধ পেমেন্ট ব্যবস্থা তৈরি করতে হবে।</div></section>
+</main>
+<footer>© 2026 TaskPay Demo • শেখা ও ডিজাইন পরীক্ষার জন্য</footer>
+<script>
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));window.scrollTo({top:0,behavior:'smooth'});}
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+function demoSubmit(e,kind){e.preventDefault();alert(kind+' সফল হয়েছে — এটি শুধু ডেমো, কোনো তথ্য সংরক্ষণ হয়নি।');e.target.reset();}
+function demoAlert(){alert('এটি নমুনা টাস্ক। আসল কাজ বা পেমেন্ট চালু নেই।');}
+function addTask(e){e.preventDefault();const name=document.getElementById('taskName').value;const desc=document.getElementById('taskDesc').value;const reward=document.getElementById('taskReward').value;const box=document.createElement('div');box.className='task-row';const info=document.createElement('div');const title=document.createElement('b');title.textContent=name;const detail=document.createElement('p');detail.textContent=(desc||'বর্ণনা দেওয়া হয়নি')+' • নমুনা পুরস্কার ৳'+reward;info.append(title,detail);box.append(info);document.getElementById('addedTasks').prepend(box);e.target.reset();alert('নমুনা টাস্ক যোগ হয়েছে। পেজ রিফ্রেশ করলে এটি মুছে যাবে।');}
+</script>
+</body></html>
